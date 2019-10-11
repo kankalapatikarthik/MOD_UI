@@ -1,0 +1,147 @@
+<div class="register-image">
+    <div class="container-fluid py-3">
+        <div class="row py-4">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="card card-signin">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Mentor Sign up</h3>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <form class="form-signin" [formGroup]="MentorRegister" autocomplete="off"
+                                    (submit)="onSubmit()">
+                                    <div class="form-row">
+                                        <div class="form-group col required">
+                                            <label>First Name</label>
+                                            <input class="form-control" formControlName="firstName">
+                                            <small class="text-danger"
+                                                *ngIf="MentorRegister.get('firstName').touched && MentorRegister.get('firstName').errors?.required">This
+                                                field is mandatory</small>
+                                            <small class="text-danger"
+                                                *ngIf="MentorRegister.get('firstName').touched && MentorRegister.get('firstName').errors?.pattern">firstName
+                                                cannot have special characters or digits</small>
+                                        </div>
+                                        <div class="form-group col required">
+                                            <label>Last Name</label>
+                                            <input class="form-control" formControlName="lastName">
+                                            <small class="text-danger"
+                                                *ngIf="MentorRegister.get('lastName').touched && MentorRegister.get('lastName').errors?.required">This
+                                                field is mandatory</small>
+                                            <small class="text-danger"
+                                                *ngIf="MentorRegister.get('lastName').touched && MentorRegister.get('lastName').errors?.pattern">lastName
+                                                cannot have special characters or digits</small>
+                                        </div>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label>User Name</label>
+                                        <input class="form-control" formControlName="userName">
+                                        <small class="text-danger"
+                                            *ngIf="MentorRegister.get('userName').touched && MentorRegister.get('userName').errors?.required">This
+                                            field is mandatory</small>
+                                        <small class="text-danger"
+                                            *ngIf="MentorRegister.get('userName').touched && MentorRegister.get('userName').errors?.pattern">username
+                                            cannot have special characters or digits</small>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label>Email</label>
+                                        <input class="form-control" formControlName="email">
+                                        <small class="text-danger"
+                                            *ngIf="MentorRegister.get('email').touched && MentorRegister.get('email').errors?.required">This
+                                            field is mandatory</small>
+                                        <small class="text-danger"
+                                            *ngIf="MentorRegister.get('email').touched && MentorRegister.get('email').errors?.pattern">Invalid
+                                            Email Address</small>
+                                    </div>
+
+                                    <div class="form-group required">
+                                        <label>Phone Number</label>
+                                        <input class="form-control" formControlName="contactNumber">
+                                        <small class="text-danger"
+                                            *ngIf="MentorRegister.get('contactNumber').touched && MentorRegister.get('contactNumber').errors?.required">This
+                                            field is mandatory</small>
+                                        <small class="text-danger"
+                                            *ngIf="MentorRegister.get('contactNumber').touched && MentorRegister.get('contactNumber').errors?.pattern">Invalid
+                                            Phone Number</small>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label>LinkedInUrl</label>
+                                        <input class="form-control" formControlName="linkdinUrl">
+                                        <small class="text-danger"
+                                            *ngIf="MentorRegister.get('linkdinUrl').touched && MentorRegister.get('linkdinUrl').errors?.required">This
+                                            field is mandatory</small>
+                                        <small class="text-danger"
+                                            *ngIf="MentorRegister.get('linkdinUrl').touched && MentorRegister.get('linkdinUrl').errors?.pattern">Invalid
+                                            Email Address</small>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label>Profile</label>
+                                        <input class="form-control" formControlName="profile">
+                                        <small class="text-danger"
+                                            *ngIf="MentorRegister.get('profile').touched && MentorRegister.get('profile').errors?.required">This
+                                            field is mandatory</small>
+
+                                    </div>
+                                    <div >
+                                            <div class="form-group required">
+                                                    <label>Select Technology:</label>
+                                                    <select formControlName="technology" class="rounded dropdown form-control" >
+                                                            <option  value="" disabled>Choose your technology</option>
+                                                            <option value="{{items.name}}" *ngFor="let items of skillData">{{items.name}}</option>
+                                                        </select>
+                                            </div>
+                                    </div>
+                                    <div >
+                                            <div class="form-group required">
+                                                    <label>Years of Experience:</label>
+                                                    <input class="form-control" formControlName="yearOfExperience">
+                                                    <small class="text-danger"
+                                                        *ngIf="MentorRegister.get('yearOfExperience').touched && MentorRegister.get('yearOfExperience').errors?.required">This
+                                                        field is mandatory</small>
+                                                    
+                                            </div>
+                                    </div>
+
+                                   
+                                        <div class="form-group required">
+                                            <label>Enter Password</label>
+                                            <input type="password" class="form-control" formControlName="password">
+                                            <small class="text-danger"
+                                                *ngIf="MentorRegister.get('password').touched && MentorRegister.get('password').errors?.required">This
+                                                field is mandatory</small>
+                                            <small class="text-danger"
+                                                *ngIf="MentorRegister.get('password').touched && MentorRegister.get('password').errors?.minlength">Minimun
+                                                8 characters required</small>
+                                        </div>
+                                        <div class="form-group required">
+                                            <label>Confirm Password</label>
+                                            <input type="password" class="form-control"
+                                                formControlName="ConfirmPassword">
+                                            <small class="text-danger"
+                                                *ngIf="MentorRegister.get('ConfirmPassword').touched && MentorRegister.get('ConfirmPassword').errors?.required">This
+                                                field is mandatory</small>
+                                            <small class="text-danger"
+                                                *ngIf="MentorRegister.get('ConfirmPassword').touched && MentorRegister.get('ConfirmPassword').errors?.mustMatch">
+                                                Password does not match</small>
+                                        </div>
+                                    
+                                    <div class="form-row my-1">
+                                        <div class="form-group col-md-12">
+                                            <button class="btn btn-lg btn-success btn-block"
+                                                [disabled]="!MentorRegister.valid">Register</button>
+                                        </div>
+                                        <div class="login-register">Do you want to
+                                            <a routerLink="/login"> Login</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+
+        </div>

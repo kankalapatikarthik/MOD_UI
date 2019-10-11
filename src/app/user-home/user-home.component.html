@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: steelblue">
+    <h1>User</h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+        <form class="form-inline my-2 my-lg-0">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['usernotifications']">Notifications</a>
+                </li>
+                <li>
+                    <a class="nav-link" (click)="logout()">Logout</a>
+                </li>
+            </ul>
+        </form>
+    </div>
+</nav>
+<br>
+<div class="fof" style="margin-top: 0px;text-align: center">
+    <button type="button" class="btn btn-outline-secondary" [routerLink]="['user-search']">Search Trainings</button>
+    <button type="button" class="btn btn-outline-secondary" [routerLink]="['user-current']">Current Trainings</button>
+    <button type="button" class="btn btn-outline-secondary" [routerLink]="['user-completed']">Completed
+        Trainings</button>
+    <button type="button" class="btn btn-outline-secondary" [routerLink]="['user-profile']">Profile</button>
+</div>
+<hr />
+<router-outlet></router-outlet>
+
+<footer class="page-footer font-small blue">
+    <div class="footer-copyright text-center py-30">© 2019 Copyright
+    </div>
+</footer>

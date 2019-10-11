@@ -1,0 +1,62 @@
+<div class="Signin-image">
+    <div class="container-fluid py-3">
+        <div class="row py-4">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="card card-signin">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Login</h3>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <form class="form-signin" [formGroup]="UserLogin" autocomplete="off"
+                                    (submit)="onSubmit()">
+                                    <div class="form-group required">
+                                        <label>UserName</label>
+                                        <input class="form-control" formControlName="email">
+                                        <small class="text-danger"
+                                            *ngIf="UserLogin.get('email').touched && UserLogin.get('email').errors?.required">This
+                                            field is mandatory</small>
+                                        <small class="text-danger"
+                                            *ngIf="UserLogin.get('email').touched && UserLogin.get('email').errors?.pattern">Invalid
+                                            UserName</small>
+                                    </div>
+                                    <div class="form-group required">
+                                        <label>Enter Password</label>
+                                        <input type="password" class="form-control" formControlName="password">
+                                        <small class="text-danger"
+                                            *ngIf="UserLogin.get('password').touched && UserLogin.get('password').errors?.required">This
+                                            field is mandatory</small>
+                                        <small class="text-danger"
+                                            *ngIf="UserLogin.get('password').touched && UserLogin.get('password').errors?.minlength">Minimun
+                                            8 characters required</small>
+                                    </div>
+                                    <div class="form-row my-1">
+                                        <div class="form-group col-md-12">
+                                            <button class="btn btn-lg btn-success btn-block"
+                                                [disabled]="!UserLogin.valid">Login</button>
+                                        </div>
+                                        <div class="login-register">Do you want to
+                                            <a routerLink="/usermentor"> Register</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>

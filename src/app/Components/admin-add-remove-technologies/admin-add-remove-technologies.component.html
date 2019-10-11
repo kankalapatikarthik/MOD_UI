@@ -1,0 +1,85 @@
+<app-admin-landing-page></app-admin-landing-page>
+<!-- <h1 class="heading">Admin Page</h1>
+<div class="fof">
+    <button type="button" class="btn btn-outline-secondary" routerLink="">Block User</button>
+    <button type="button" class="btn btn-outline-secondary" routerLink="">Block Mentor</button>
+    <button type="button" class="btn btn-outline-secondary" routerLink="/technologies">Add Remove Technologies</button>
+    <button type="button" class="btn btn-outline-secondary" routerLink="">Payment </button>
+</div> -->
+<br>
+<br>
+<h2>Admin Add/Remove Courses</h2>
+<h3>Add skill</h3>
+<div class=" row">
+    <div class="col-md-5">
+        <form class="form-technologies" [formGroup]="AddTechnologies" autocomplete="off"
+            (submit)="onSubmit(AddTechnologies)">
+            <div class="form-group required">
+                <label class="control-label " for="name">Name</label>
+                <input type="text" class="form-control" placeholder="eg:Mean Stack" formControlName="name">
+                <small class="text-danger"
+                    *ngIf="AddTechnologies.get('name').touched && AddTechnologies.get('name').errors?.required">This
+                    field is
+                    mandatory</small>
+            </div>
+            <div class="form-group required">
+                <label class="control-label " for="toc">Toc</label>
+                <input type="text" class="form-control" placeholder="eg:Angular,Mongodb" formControlName="toc">
+                <small class="text-danger"
+                    *ngIf="AddTechnologies.get('toc').touched && AddTechnologies.get('toc').errors?.required">This field
+                    is
+                    mandatory</small>
+            </div>
+            <div class="form-group required">
+                <label class="control-label " for="prerequisites">Prerequisites</label>
+                <input type="text" class="form-control" placeholder="eg:Html" formControlName="prerequisites">
+                <small class="text-danger"
+                    *ngIf="AddTechnologies.get('prerequisites').touched && AddTechnologies.get('prerequisites').errors?.required">This
+                    field is mandatory</small>
+            </div>
+            <div class="form-group required">
+                <label class="control-label " for="fees">Fees</label>
+                <input type="text" class="form-control" placeholder="eg:10,000" formControlName="fees">
+                <small class="text-danger"
+                    *ngIf="AddTechnologies.get('fees').touched && AddTechnologies.get('fees').errors?.required">This
+                    field is
+                    mandatory</small>
+            </div>
+            <div class="form-group required">
+                <button class="btn btn-info" [disabled]="!AddTechnologies.valid">Add</button>
+            </div>
+        </form>
+
+    </div>
+    <div class="col-md-6">
+        <table class="table table-bordered">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Toc</th>
+                <th>Prerequisites</th>
+                <th>Fees</th>
+                <th>Action</th>
+            </thead>
+            <tr *ngFor="let items of skillData">
+                <td>{{items.id}}</td>
+                <td>{{items.name}}</td>
+                <td>{{items.toc}}</td>
+                <td>{{items.prerequisites}}</td>
+                <td>{{items.fees}}</td>
+                <td><a><button type="button" class="btn btn-danger btn-sm"
+                            (click)="deleteSkill(items.id)">Delete</button></a>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</div>
+<br>
+<br>
+<footer class="page-footer font-small blue">
+    <div class="footer-copyright text-center py-30">© 2019 Copyright
+    </div>
+</footer>

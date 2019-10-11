@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light " style="background-color: steelblue">
+    <h1>Training Program</h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+        <form class="form-inline my-2 my-lg-0">
+            <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['notifications']">Notifications</a>
+                </li>
+                <li>
+                    <a class="nav-link" (click)="logout()">Logout</a>
+                </li>
+            </ul>
+        </form>
+    </div>
+</nav>
+<hr/>
+    <div class="fof">
+    <button type="button" class="btn btn-outline-secondary" routerLink="/admin-user-block">Block User</button>
+    <button type="button" class="btn btn-outline-secondary" routerLink="/admin-mentor-block">Block Mentor</button>
+    <button type="button" class="btn btn-outline-secondary" routerLink="/technologies">Add Remove Technologies</button>
+    <button type="button" class="btn btn-outline-secondary" routerLink="/admin-payment">Payment</button>
+    </div>
+    <hr>
+    <footer class="page-footer font-small blue">
+            <div class="footer-copyright text-center py-30">© 2019 Copyright
+            </div>
+     </footer>
+

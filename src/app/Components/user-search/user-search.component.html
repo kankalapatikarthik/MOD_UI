@@ -1,0 +1,35 @@
+<div class="container" style="padding: 0px;margin-top:0px;">
+        <h3 class="text-center " style="color: black;">Search Mentors </h3>
+    <form class="form-signin" [formGroup]="Search" autocomplete="off" (submit)="onSubmit()">
+        <div style="margin-top: 0px;padding-top: 0px;text-align: center;">
+            <div class="formRight form-group required">
+                <select formControlName="technology">
+                    <option value="" disabled>Choose your technology</option>
+                    <option value="{{items.name}}" *ngFor="let items of skillData">{{items.name}}</option>
+                </select>
+                <button type="submit" class="btn btn-dark">Search &nbsp;<i class="fa fa-search"></i></button>
+
+            </div>
+        </div>
+    </form>
+    <div class="container">
+        <table class="table table-bordered table-striped" style="color: black;">
+            <tbody id="myTable">
+                <tr>
+                    <th>Name of Mentor</th>
+                    <th>Expertise</th>
+                    <th>Year of Experience</th>
+                    <th>Propose Training</th>
+                </tr>
+                <tr *ngFor="let items of Trainerdetails">
+                    <td>{{items.firstName}} {{items.lastName}}</td>
+                    <td>{{items.technology}}</td>
+                    <td>{{items.yearOfExperience}}</td>
+                    <td><button class="btn btn-primary" (click)="onPropose(items.id)">Propose Training</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+</div>

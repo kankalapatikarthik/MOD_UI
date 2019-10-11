@@ -1,0 +1,23 @@
+.heading{
+    margin-top: 75px;
+    margin-left: 75px;
+    color:green;
+}
+.fof{
+  margin-left:75px;
+}
+button{
+    margin-right:150px;
+} 
+
+.footer-copyright
+{
+   background-color:steelblue;
+    position : fixed;
+    bottom :0;
+    width: 100%;
+    height: 2.5rem; 
+    padding: 15px 15px 15px 15px;
+    z-index: 1;
+  
+}
